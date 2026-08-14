@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thandeka's Artisan Home Decor | Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Visit or Contact Us</h2>
+
+      <!-- Map embed placeholder — replace src with an actual Google Maps embed URL -->
+      <iframe
+        class="map-embed"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=18.40%2C-33.95%2C18.45%2C-33.90&layer=mapnik"
+        title="Map showing Thandeka's Artisan Home Decor store locations"
+        loading="lazy">
+      </iframe>
+
+      <!-- Two store locations, as required by the assignment brief -->
+      <div class="locations">
+        <div class="card">
+          <h3>Main Store</h3>
+          <p>8 Palm Avenue, Observatory, Cape Town, 7925</p>
+          <p>Tel: 021 555 0303</p>
+          <p>Mon-Sat: 09:00 - 17:00</p>
+        </div>
+        <div class="card">
+          <h3>Market Stall</h3>
+          <p>Stall 14, Oranjezicht City Farm Market, Cape Town, 8001</p>
+          <p>Tel: 021 555 0404</p>
+          <p>Sat-Sun: 08:00 - 14:00</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 40px;">Send Us a Message</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Thandeka's Artisan Home Decor. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thandeka's Artisan Home Decor | Enquiry</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html" class="active">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Product Enquiry</h2>
+      <p>
+        Have a question about a product, want to check stock, or need a custom order?
+        Fill out the form below and we'll get back to you.
+      </p>
+
+     
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="enquiryType">Enquiry Type</label>
+          <select id="enquiryType" name="enquiryType" required>
+            <option value="">-- Please select --</option>
+            <option value="stock">Stock Availability</option>
+            <option value="custom">Custom Order</option>
+            <option value="general">General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us which product you're interested in..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Enquiry</button>
+      </form>
+      <!-- Note: form submission handling (backend/JS validation) will be implemented in Part 3 -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Thandeka's Artisan Home Decor. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
