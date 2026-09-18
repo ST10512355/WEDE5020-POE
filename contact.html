@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thandeka's Artisan Home Decor | Contact</title>
+  <!-- Google Fonts used by css/style.css (Playfair Display for headings, Lato for body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- HEADER / NAVIGATION - same shared structure as every other page; "active" class marks Contact -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
@@ -26,7 +33,14 @@
     <section class="container">
       <h2>Visit or Contact Us</h2>
 
-      <!-- Map embed placeholder — replace src with an actual Google Maps embed URL -->
+      <!--
+        Map embed. This uses OpenStreetMap's free embed endpoint (no API key
+        required) as a placeholder; the bbox parameter in the URL controls which
+        area of the map is shown. It can be swapped for a Google Maps embed URL
+        (Google My Business > Share > Embed a map) once the real store location(s)
+        are confirmed. loading="lazy" defers loading the map until it scrolls into
+        view, improving initial page load time.
+      -->
       <iframe
         class="map-embed"
         src="https://www.openstreetmap.org/export/embed.html?bbox=18.40%2C-33.95%2C18.45%2C-33.90&layer=mapnik"
@@ -34,7 +48,11 @@
         loading="lazy">
       </iframe>
 
-      <!-- Two store locations, as required by the assignment brief -->
+      <!--
+        Two physical locations (main store + market stall), as required by the
+        brief -reuses the .locations grid layout (defined in css/style.css) so
+        the two location cards sit side-by-side on desktop and stack on mobile.
+      -->
       <div class="locations">
         <div class="card">
           <h3>Main Store</h3>
@@ -50,6 +68,12 @@
         </div>
       </div>
 
+      <!--
+        General contact form — simpler than the Enquiry page form (no dropdown),
+        intended for visitors with a general question rather than a specific
+        product enquiry. Both forms share the same .form-group/label/input
+        structure so they inherit identical styling from css/style.css.
+      -->
       <h2 style="margin-top: 40px;">Send Us a Message</h2>
       <form action="#" method="post">
         <div class="form-group">

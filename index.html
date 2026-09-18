@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thandeka's Artisan Home Decor | Home</title>
+  <!-- Google Fonts used by css/style.css (Playfair Display for headings, Lato for body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!--
+    HEADER / NAVIGATION
+    This <header> is duplicated (with the same markup and the same five links) at the
+    top of every page in the site. The "active" class is manually applied to whichever
+    link matches the current page, giving the visitor a visual cue of where they are.
+    The <button class="nav-toggle"> only becomes visible on small screens (see the
+    max-width: 700px media query in css/style.css) and is wired up in js/main.js to
+    show/hide the .nav-links list - this is how the site provides a working mobile
+    navigation menu without needing a separate mobile page.
+  -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
@@ -24,9 +40,17 @@
     </div>
   </header>
 
-  
+  <!--
+    MAIN CONTENT
+    The homepage has two sections: a full-width hero banner used to introduce the
+    brand and drive traffic to the Products page, and a "Welcome" section that
+    previews the three main product categories using the reusable .card-grid /
+    .card component (the same component is reused on the Products and About pages
+    so the visual style stays consistent across the site).
+  -->
   <main>
 
+    <!-- Hero banner: brand tagline, short intro, and the primary call-to-action button -->
     <section class="hero">
       <h1>Handmade Decor, Made With Heart</h1>
       <p>
@@ -36,27 +60,34 @@
       <a href="products.html" class="btn">Shop the Range</a>
     </section>
 
+    <!-- Welcome/introduction section giving a short overview of the store -->
     <section class="container">
       <h2>Welcome</h2>
       <p>
         Thandeka's Artisan Home Decor brings beautifully crafted, locally-made home decor
         into every household at accessible prices, while supporting the artisans who make them.
-        <!-- TODO: Replace with fully researched content per Section 3 (Content Research and Sourcing) -->
+
       </p>
 
+      <!--
+        Category preview cards. Each .card holds one image, a heading, and a short
+        description; the .card-grid class (defined in css/style.css) uses CSS Grid
+        with auto-fit/minmax so the number of columns adjusts automatically to the
+        screen width instead of needing separate desktop/tablet/mobile markup.
+      -->
       <div class="card-grid">
         <div class="card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4tU0XmAXtUV9yBEKtj85RabdkQ0cnSlDuAYfQrERBaw&s=10" alt="Handmade ceramic vases and bowls">
+          <img src="images/ceramic vases.jpg" alt="Handmade ceramic vases and bowls">
           <h3>Ceramics</h3>
           <p>Hand-thrown vases, bowls, and mugs from local potters.</p>
         </div>
         <div class="card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-xaYXRp6ZE4j_0VFY-1PttbrWOGAQOuRMzbm7c0CzbA&s" alt="Handwoven throws and cushions">
+          <img src="images/throws.png" alt="Handwoven throws and cushions">
           <h3>Textiles</h3>
           <p>Handwoven throws, cushions, and table linen in natural fibres.</p>
         </div>
         <div class="card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUbj6WxhZNI7dtAfss5-D9KZtXlh6SmiSFk-tX2PV92Q&s=10" alt="Woven baskets">
+          <img src="images/baskets.png" alt="Woven baskets">
           <h3>Woven Baskets</h3>
           <p>Storage and decor baskets, hand-woven from sustainable materials.</p>
         </div>
@@ -65,7 +96,7 @@
 
   </main>
 
- 
+  <!-- FOOTER: repeated identically on every page for a consistent site-wide copyright notice -->
   <footer>
     <p>&copy; 2026 Thandeka's Artisan Home Decor. All rights reserved.</p>
   </footer>

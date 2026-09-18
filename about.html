@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thandeka's Artisan Home Decor | About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!--
+    HEADER / NAVIGATION -identical structure to index.html so the nav behaves
+    consistently across the site. Only the "active" class moves to whichever
+    link matches the current page (here, "About Us").
+  -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
@@ -22,17 +32,25 @@
     </div>
   </header>
 
+  <!--
+    MAIN CONTENT - three stacked sections building a picture of the organisation,
+    as required by the "About Us" page in the sitemap: history, mission/vision,
+    and the people behind the store.
+  -->
   <main>
+
+    <!-- Our Story: brief organisational history -->
     <section class="container">
       <h2>Our Story</h2>
       <p>
         Thandeka's Artisan Home Decor started as a small stall selling handmade ceramics and
         woven goods from local artisans. Today, it has grown into a beloved store offering a
         curated range of home decor, while continuing to support the makers behind every piece.
- 
+        <!-- TODO: Replace with fully researched, organisation-specific history content -->
       </p>
     </section>
 
+    <!-- Mission & Vision: two cards placed side-by-side using the shared .card-grid layout -->
     <section class="container">
       <h2>Mission &amp; Vision</h2>
       <div class="card-grid">
@@ -47,20 +65,25 @@
       </div>
     </section>
 
+    <!--
+      Meet the Team: reuses the .card-grid/.card pattern from the homepage, this
+      time with a photo, role title, and a one-line description for each person.
+    -->
     <section class="container">
       <h2>Meet the Team</h2>
       <div class="card-grid">
         <div class="card">
-          <img src="Thandeka.png" alt="Photo of store founder">
+          <img src="images/Thandeka.png" alt="Photo of store founder">
           <h3>Founder &amp; Curator</h3>
           <p>Sources and curates the store's artisan product range.</p>
         </div>
         <div class="card">
-          <img src="store manager.png" alt="Photo of store manager">
+          <img src="images/store manager.png" alt="Photo of store manager">
           <h3>Store Manager</h3>
           <p>Manages daily store operations and customer relationships.</p>
         </div>
       </div>
+    
     </section>
   </main>
 

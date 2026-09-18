@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thandeka's Artisan Home Decor | Enquiry</title>
+  <!-- Google Fonts used by css/style.css (Playfair Display for headings, Lato for body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- HEADER / NAVIGATION - same shared structure as every other page; "active" class marks Enquiry -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
@@ -30,7 +37,18 @@
         Fill out the form below and we'll get back to you.
       </p>
 
-     
+      <!--
+        Enquiry form. Each field is wrapped in a .form-group div (label + input) so
+        css/style.css can apply consistent spacing/width to every field without
+        needing separate rules per input. required attributes provide basic
+        client-side validation (built into the browser) so the form cannot be
+        submitted without a name, email, and enquiry type. The "Enquiry Type"
+        dropdown lets the visitor tell the store up front whether they're asking
+        about stock, a custom order, or something general, so the right person can
+        follow up. The form does not currently submit anywhere (action="#") because
+        there is no backend yet - real submission handling and JS-based validation
+        are planned for Part 3.
+      -->
       <form action="#" method="post">
         <div class="form-group">
           <label for="fullName">Full Name</label>

@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title><h1>Thandeka's Artisan Home Decor | Products</h1></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thandeka's Artisan Home Decor | Products</title>
+  <!-- Google Fonts used by css/style.css (Playfair Display for headings, Lato for body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- HEADER / NAVIGATION — same shared structure as every other page; "active" class marks Products -->
   <header>
     <div class="navbar">
       <a href="index.html" class="logo">Thandeka's Artisan Home Decor</a>
@@ -22,6 +29,12 @@
     </div>
   </header>
 
+  <!--
+    MAIN CONTENT - the full product catalogue, one .card per category. This is the
+    "Services/Products" page required by the sitemap: each card pairs an image with
+    a heading and description so visitors can scan all four product categories at a
+    glance before using the Enquiry page to ask about a specific one.
+  -->
   <main>
     <section class="container">
       <h2>Our Products</h2>
@@ -29,28 +42,42 @@
 
       <div class="card-grid">
         <div class="card">
-          <img src="bowls.png" alt="Handmade ceramic vases and bowls">
+          <!--
+            Responsive image example (Section 3.3): srcset lets the browser pick
+            the most appropriate file for its viewport width instead of always
+            downloading the largest version, and sizes tells the browser how wide
+            the image will actually be rendered at each breakpoint (matching the
+            card-grid behaviour defined in css/style.css). This assumes three
+            exported sizes of the same photo exist in images/ - small (400w),
+            medium (800w), and large (1200w) - named with a "-{width}w" suffix.
+            TODO: export and add the actual 400w/800w/1200w image files; until
+            then this falls back to the single images/ceramics.jpg file via src.
+          -->
+          <img
+            src="images/bowls.png"
+    alt="Handmade ceramic vases and bowls">
           <h3>Ceramics</h3>
           <p>
             Hand-thrown vases, bowls, and mugs, each uniquely glazed by local potters.
+            
           </p>
         </div>
         <div class="card">
-          <img src="throws.png" alt="Handwoven throws and cushions">
+          <img src="images/throws.png" alt="Handwoven throws and cushions">
           <h3>Textiles</h3>
           <p>
             Handwoven throws, cushion covers, and table linen made from natural fibres.
           </p>
         </div>
         <div class="card">
-          <img src="baskets.png" alt="Woven storage baskets">
+          <img src="images/baskets.png" alt="Woven storage baskets">
           <h3>Woven Baskets</h3>
           <p>
             Sustainable, hand-woven storage and decor baskets in a range of sizes.
           </p>
         </div>
         <div class="card">
-          <img src="candles.png" alt="Handmade candles">
+          <img src="images/candles.png" alt="Handmade candles">
           <h3>Candles</h3>
           <p>
             Hand-poured soy candles in a variety of natural scents.

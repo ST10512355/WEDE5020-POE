@@ -1,0 +1,429 @@
+/*
+   Part 2 sections:
+     1. CSS Reset & root variables
+     2. Base / global styles
+     3. Typography
+     4. Layout (header/nav, hero, sections, grid/flex components)
+     5. Visual styles & interactive pseudo-classes
+     6. Forms
+     7. Footer
+     8. Responsive design (breakpoints, relative units, responsive images)
+    */
+
+/* 
+   1. CSS RESET
+   Removes browser-default spacing and box-sizing quirks so the site looks
+   consistent across Chrome, Firefox, and Edge 
+   */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colour palette */
+  --colour-primary: #C97B4A;   /* terracotta — buttons, links, headings */
+  --colour-accent: #8A9A5B;    /* sage green — secondary buttons, hover states */
+  --colour-bg: #F5F0E6;        /* cream — page background */
+  --colour-text: #3A2E27;      /* warm dark brown — body text */
+  --colour-white: #FFFFFF;
+  --colour-border: #D8CFC2;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', Arial, sans-serif;
+
+  /* Spacing scale (relative units — used instead of fixed pixel values
+     throughout this file so spacing scales with the user's font settings) */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  /* Breakpoints (referenced in comments below; media queries cannot read
+     custom properties directly, so the pixel values are repeated in the
+     @media rules further down, but are documented here as the single
+     source of truth) */
+  /* --bp-tablet: 900px */
+  /* --bp-mobile: 600px */
+}
+
+/* 
+   Base colour styles */
+html {
+  /* Setting the root font-size in px (only place this is done) gives every
+     rem value elsewhere in the file a predictable base of 1rem = 16px,
+     while still letting the browser/user's own font-size preference scale
+     everything proportionally if they've changed their default. */
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--colour-text);
+  background-color: var(--colour-bg);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Reusable content wrapper — every <section class="container"> uses this to
+   keep text readable on wide screens instead of stretching edge-to-edge. */
+.container {
+  max-width: 68.75rem; /* 1100px */
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* 
+   3. TYPOGRAPHY
+   font-family, font-size, font-weight, line-height, and letter-spacing are
+   all set here so every heading across the five pages looks consistent.
+    */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--colour-text);
+}
+
+h1 {
+  /*  lets the hero heading scale smoothly between
+     screen sizes instead of jumping abruptly at a breakpoint  */
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--colour-primary);
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: var(--colour-primary);
+  margin: 0.6rem 0;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/*
+   4. LAYOUT - Header & Navigation (Flexbox)
+   The navbar uses display: flex to place the logo on the left and the nav
+   links on the right, vertically centred, without needing floats or
+   absolute positioning.
+   */
+    
+header {
+  background-color: var(--colour-white);
+  border-bottom: 3px solid var(--colour-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  max-width: 68.75rem;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--colour-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  padding: 0.4rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Visual styles + interactive pseudo-classes: hover/focus give the visitor
+   feedback before they click, and .active marks the current page. */
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a.active {
+  border-color: var(--colour-accent);
+  color: var(--colour-primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--colour-primary);
+}
+
+/*LAYOUT */
+.hero{
+background-color: var(--colour-primary);
+  color: var(--colour-white);
+  text-align: center;
+  padding: 5rem 1.25rem;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  color: var(--colour-white);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 37.5rem;
+  margin: 0 auto 1.75rem;
+}
+
+/* 
+   5. VISUAL STYLES - Buttons
+    */
+.btn {
+  display: inline-block;
+  background-color: var(--colour-accent);
+  color: var(--colour-white);
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+/* :hover / :focus / :active pseudo-classes give the button a tactile feel:
+   it lifts slightly on hover/focus, and "presses down" on click. */
+.btn:hover,
+.btn:focus {
+  opacity: 0.92;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+   4. LAYOUT - Generic page sections
+    */
+main {
+  min-height: 60vh;
+}
+
+section {
+  padding: 3.75rem 0;
+}
+
+/* 
+   4. LAYOUT - Card grid (CSS Grid)
+   Used for product cards, team member cards, and mission/vision cards.
+   auto-fit + minmax means the grid automatically fits as many 16.25rem-wide
+   columns as will comfortably fit the container - 3-4 on desktop, fewer on
+   tablet, and a single column on mobile - without a single media query.
+    */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background-color: var(--colour-white);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover feedback on cards - subtle lift, consistent with the .btn hover style */
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* 
+   6. FORMS (Enquiry & Contact) - Flexbox
+   */
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colour-white);
+  padding: 1.875rem;
+  border-radius: 8px;
+  max-width: 37.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 1.125rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--colour-border);
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* :focus pseudo-class - clear visual indicator of which field is active,
+   both for usability and accessibility (keyboard navigation). */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--colour-primary);
+  box-shadow: 0 0 0 3px rgba(201, 123, 74, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 6.875rem;
+}
+
+/* 
+   4. LAYOUT — Map & locations section (Contact page)
+    */
+.map-embed {
+  border: 0;
+  width: 100%;
+  height: 18.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* 
+   7. FOOTER
+    */
+footer {
+  background-color: var(--colour-text);
+  color: var(--colour-white);
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  margin-top: 2.5rem;
+}
+
+footer a {
+  color: var(--colour-accent);
+}
+
+/* 
+   8. RESPONSIVE DESIGN
+   Two breakpoints are used, matching the brief's "desktop, tablet, mobile"
+   guidance: styles above this point are the desktop (default) styles, and
+   the two @media blocks below override only what needs to change for
+   smaller screens - this is the "cascading" approach the brief asks for,
+   rather than rewriting every rule from scratch at each breakpoint.
+    */
+
+/* Tablet breakpoint (max-width: 900px) 
+   Multi-column layouts (card-grid, locations) still apply here via
+   auto-fit/minmax, but typography and spacing are slightly reduced. */
+@media (max-width: 900px) {
+  .hero {
+    padding: 3.5rem 1.25rem;
+  }
+
+  section {
+    padding: 2.75rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- Mobile breakpoint (max-width: 600px) ---
+   This is where the layout switches from multi-column to single-column:
+   the nav collapses behind the hamburger toggle, and card-grid/.locations
+   naturally drop to one column because minmax()'s minimum width no longer
+   fits two columns in the available space. */
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.75rem 1.25rem 1.25rem;
+    gap: 0.875rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 2.75rem 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  form {
+    padding: 1.25rem;
+  }
+}
